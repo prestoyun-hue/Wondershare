@@ -76,7 +76,8 @@ const Features: React.FC = () => {
                 <YAxis dataKey="name" type="category" width={100} tick={{fontSize: 12, fontWeight: 'bold'}} />
                 <Tooltip cursor={{fill: 'transparent'}} />
                 <Bar dataKey="cost" radius={[0, 4, 4, 0]} barSize={40}>
-                  {costData.map((entry, index) => (
+                  {/* Fixed: Replaced 'entry' with '_' to avoid unused variable error */}
+                  {costData.map((_, index) => (
                     <Cell key={`cell-${index}`} fill={index === 0 ? '#9CA3AF' : '#0065F2'} />
                   ))}
                 </Bar>
